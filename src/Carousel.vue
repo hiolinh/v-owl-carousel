@@ -89,9 +89,12 @@
       },
       watch: {
         autoplay(nVal) {
+          console.log('watch autoplay', nVal)
           if (nVal) {
+            console.log('play')
             this.owl.trigger('play.owl.autoplay', this.autoplayTimeout)
           } else {
+            console.log('stop')
             this.owl.trigger('stop.owl.autoplay')
           }
         }
