@@ -100,27 +100,27 @@
         }
       },
       mounted : function() {
-        // this.owl = $('#' + this.elementHandle).owlCarousel({
-        //    items        : this.items,
-        //    margin       : this.margin,
-        //    loop         : this.loop,
-        //    center       : this.center,
-        //    nav          : this.nav,
-         //   autoplay     : this.autoplay,
-        //    autoplaySpeed: this.autoplaySpeed,
-        //    rewind       : this.rewind,
-         //   mouseDrag    : this.mouseDrag,
-         //   touchDrag    : this.touchDrag,
-         //   pullDrag     : this.pullDrag,
-         //   freeDrag     : this.freeDrag,
-         //   stagePadding     : this.stagePadding,
-         //   autoWidth     : this.autoWidth,
-         //   autoHeight     : this.autoHeight,
-         //   dots     : this.dots,
-         //   autoplayTimeout     : this.autoplayTimeout,
-         //   autoplayHoverPause     : this.autoplayHoverPause,
-         //   responsive     : this.responsive
-        // });
+        this.owl = $('#' + this.elementHandle).owlCarousel({
+            items        : this.items,
+            margin       : this.margin,
+            loop         : this.loop,
+            center       : this.center,
+            nav          : this.nav,
+            autoplay     : this.autoplay,
+            autoplaySpeed: this.autoplaySpeed,
+            rewind       : this.rewind,
+            mouseDrag    : this.mouseDrag,
+            touchDrag    : this.touchDrag,
+            pullDrag     : this.pullDrag,
+            freeDrag     : this.freeDrag,
+            stagePadding     : this.stagePadding,
+            autoWidth     : this.autoWidth,
+            autoHeight     : this.autoHeight,
+            dots     : this.dots,
+            autoplayTimeout     : this.autoplayTimeout,
+            autoplayHoverPause     : this.autoplayHoverPause,
+            responsive     : this.responsive
+        });
 
         $('#' + this.prevHandler).click(function() {
           this.owl.trigger('prev.owl.carousel');
