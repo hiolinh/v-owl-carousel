@@ -20,6 +20,7 @@
       name: 'VOwlCarousel',
       data: function(){
         return {
+            owl: null,
             prevHandler: 'carousel_prev_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
             elementHandle: 'carousel_' +  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
             nextHandler: 'carousel_next_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
@@ -86,9 +87,17 @@
             }
         }
       },
-
+      watch: {
+        autoplay(nVal) {
+          if (nVal) {
+            this.owl.trigger('play.owl.autoplay', this.autoplayTimeout)
+          } else {
+            this.owl.trigger('stop.owl.autoplay')
+          }
+        }
+      },
       mounted : function() {
-        const owl = $('#' + this.elementHandle).owlCarousel({
+        this.owl = $('#' + this.elementHandle).owlCarousel({
             items        : this.items,
             margin       : this.margin,
             loop         : this.loop,
@@ -111,11 +120,11 @@
         });
 
         $('#' + this.prevHandler).click(function() {
-          owl.trigger('prev.owl.carousel');
+          this.owl.trigger('prev.owl.carousel');
         });
 
         $('#' + this.nextHandler).click(function() {
-          owl.trigger('next.owl.carousel');
+          this.owl.trigger('next.owl.carousel');
         });
       }
   }
