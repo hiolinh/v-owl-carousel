@@ -129,6 +129,11 @@
         $('#' + this.nextHandler).click(function() {
           this.owl.trigger('next.owl.carousel');
         });
-      }
+      },
+      methods: {
+          toSlide(index) {
+              this.owl.trigger('to.owl.carousel', index);
+          }
+      },
   }
 </script>
