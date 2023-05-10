@@ -138,10 +138,6 @@ export default {
     $("#" + this.nextHandler).click(function () {
       this.owl.trigger("next.owl.carousel");
     });
-
-    this.owl.on('changed.owl.carousel', function(event) {
-        this.$emit('onChange', event)
-    });
   },
   methods: {
     toSlide(index) {
